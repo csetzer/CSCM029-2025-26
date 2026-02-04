@@ -2,7 +2,7 @@ package lab2;
 
 
 
-/** 
+/**
  *   Ledger defines for each user the balance at a given time
      in the ledger model of bitcoins
      and contains methods for checking and updating the ledger
@@ -12,9 +12,9 @@ package lab2;
 public class Ledger extends UserAmount{
 
 
-    /** 
+    /**
      *
-     *  Task 1: Fill in the method checkUserAmountDeductable
+     *  Task 2.1: Fill in the method checkUserAmountDeductable
      *          You need to replace the dummy value true by the correct calculation
      *
      * Check all items in amountToCheckForDeduction can be deducted from the current one
@@ -26,7 +26,7 @@ public class Ledger extends UserAmount{
      *  by first converting that TransactionOutputList into a
      *  UserAmount and then using this method
      *
-     * A naive check would just check whether each entry of a outputlist of a Transaction 
+     * A naive check would just check whether each entry of a outputlist of a Transaction
      *   can be deducted
      *
      * But there could be an output for the same user Alice of say 10 units twice
@@ -41,9 +41,9 @@ public class Ledger extends UserAmount{
      * Converting the TransactionOutputList into a UserAmount
      *   is a better approach since the outputlist of a Transaction
      *   is usually much smaller than the main Ledger.
-     * 
      *
-     */    
+     *
+     */
 
     public boolean checkUserAmountDeductable(UserAmount userAmountCheck){
 	// you need to replace then next line by the correct statement
@@ -51,9 +51,9 @@ public class Ledger extends UserAmount{
     };
 
 
-    /** 
+    /**
      *
-     *  Task 2: Fill in the method checkEntryListDeductable 
+     *  Task 2.2: Fill in the method checkEntryListDeductable
      *          You need to replace the dummy value true by the correct calculation
      *
      *  It checks that an EntryList (which will be inputs of a transactions)
@@ -61,8 +61,8 @@ public class Ledger extends UserAmount{
      *
      *   done by first converting the EntryList into a UserAmount
      *     and then checking that the resulting UserAmount can be deducted.
-     *   
-     */    
+     *
+     */
 
 
     public boolean checkEntryListDeductable(EntryList txel){
@@ -70,81 +70,81 @@ public class Ledger extends UserAmount{
 	return true;
     };
 
-    /** 
-     *  Task 3: Fill in the methods subtractEntryList and  addEntryList.
+    /**
+     *  Task 2.3: Fill in the methods subtractEntryList and  addEntryList.
      *
-     *   Subtract an EntryList (txel, usually transaction inputs) from the ledger 
+     *   Subtract an EntryList (txel, usually transaction inputs) from the ledger
      *
      *   requires that the list to be deducted is deductable.
-     *   
-     */    
-    
+     *
+     */
+
 
     public void subtractEntryList(EntryList txel){
-	//  fill in Body	
+	//  fill in Body
     }
 
 
 
 
-    /** 
+    /**
      * Add a TxEntryList (txel, usually transaction outputs) to the current ledger
      *
-     */    
+     */
 
     public void addEntryList(EntryList txel){
 	// fill in Body
     }
 
 
-    /** 
+    /**
      *
-     *  Task 4: Fill in the method checkTransactionValid
+     *  Task 2.4: Fill in the method checkTransactionValid
      *          You need to replace the dummy value true by the correct calculation
      *
      * Check a transaction is valid:
      *    the sum of outputs is less than or equal the sum of inputs
      *    and the inputs can be deducted from the ledger.
      *
-     */    
-    
+     */
+
     public boolean checkTransactionValid(Transaction tx){
 	// you need to replace then next line by the correct statement
-	return true;	
+	return true;
     };
 
-    /** 
+    /**
      *
-     *  Task 5: Fill in the method processTransaction
+     *  Task 2.5: Fill in the method processTransaction
      *
      * Process a transaction
      *    by first deducting all the inputs
      *    and then adding all the outputs.
      *
-     */    
-    
+     */
+
 
     public void processTransaction(Transaction tx){
-	// fill in Body	
+	// fill in Body
     };
 
 
 
-    /** 
-     *  Task 6: Fill in the testcases as described in the labsheet
-     *    
+    /**
+     *  Task 2.6: Fill in the testcases as described in the labsheet
+     *
      * Testcase
      */
-    
+
     public static void test() {
-	// fill in Body	
+	// fill in Body
     }
-    
-    /** 
+
+    /**
      * main function running test cases
-     */            
+     */
 
     public static void main(String[] args) {
-	Ledger.test();	
+	Ledger.test();
     }
 }
